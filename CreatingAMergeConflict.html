@@ -1,0 +1,63 @@
+Jacquelines-MacBook-Pro:github-pages JYIP$ cd
+Jacquelines-MacBook-Pro:~ JYIP$ cd ~/Sites
+Jacquelines-MacBook-Pro:Sites JYIP$ pwd
+/Users/JYIP/Sites
+Jacquelines-MacBook-Pro:Sites JYIP$ git clone git@github.com:YakkieYip/mergeconflict2.git
+Cloning into 'mergeconflict2'...
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+Checking connectivity... done.
+Jacquelines-MacBook-Pro:Sites JYIP$ cd mergeconflict2
+Jacquelines-MacBook-Pro:mergeconflict2 JYIP$ pwd
+/Users/JYIP/Sites/mergeconflict2
+Jacquelines-MacBook-Pro:mergeconflict2 JYIP$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+Jacquelines-MacBook-Pro:mergeconflict2 JYIP$ git remote -v
+origin	git@github.com:YakkieYip/mergeconflict2.git (fetch)
+origin	git@github.com:YakkieYip/mergeconflict2.git (push)
+Jacquelines-MacBook-Pro:mergeconflict2 JYIP$ git remote remove origin
+Jacquelines-MacBook-Pro:mergeconflict2 JYIP$ git remote -v
+Jacquelines-MacBook-Pro:mergeconflict2 JYIP$ git remote add origin git@github.com:YakkieYip/mergeconflict2.git
+Jacquelines-MacBook-Pro:mergeconflict2 JYIP$ git remote add upstream git@github.com:The3Amigos/mergeconflict2.git
+Jacquelines-MacBook-Pro:mergeconflict2 JYIP$ git remote -v
+origin	git@github.com:YakkieYip/mergeconflict2.git (fetch)
+origin	git@github.com:YakkieYip/mergeconflict2.git (push)
+upstream	git@github.com:The3Amigos/mergeconflict2.git (fetch)
+upstream	git@github.com:The3Amigos/mergeconflict2.git (push)
+Jacquelines-MacBook-Pro:mergeconflict2 JYIP$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	CreatingAMergeConflict.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+Jacquelines-MacBook-Pro:mergeconflict2 JYIP$ git add -A
+Jacquelines-MacBook-Pro:mergeconflict2 JYIP$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   CreatingAMergeConflict.html
+
+Jacquelines-MacBook-Pro:mergeconflict2 JYIP$ git pull upstream master
+remote: Counting objects: 8, done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 8 (delta 0), reused 8 (delta 0), pack-reused 0
+Unpacking objects: 100% (8/8), done.
+From github.com:The3Amigos/mergeconflict2
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> upstream/master
+Updating 1588fbc..9d3f9e4
+Fast-forward
+ index.html       | 15 +++++++++++++++
+ js/main.js       |  1 +
+ styles/style.css | 10 ++++++++++
+ 3 files changed, 26 insertions(+)
+ create mode 100644 index.html
+ create mode 100644 js/main.js
+ create mode 100644 styles/style.css
+Jacquelines-MacBook-Pro:mergeconflict2 JYIP$    
